@@ -1,0 +1,91 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblSkills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    string renk = "";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <a href="/Skill/NewSkill/" class="btn btn-info">Yeni Yetenek Ekle</a>
+                                <br />
+                                <br />
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Yetenek</th>
+                                            <th>Derece</th>
+                                            <th style="width: 40px">Oran</th>
+                                            <th>Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            if (item.Percent >= 0 && item.Percent <= 50)
+                                            {
+                                                renk = "bg-danger";
+                                            }
+                                            if (item.Percent >= 51 && item.Percent <= 70)
+                                            {
+                                                renk = "bg-warning";
+                                            }
+                                            if (item.Percent >= 71 && item.Percent <= 84)
+                                            {
+                                                renk = "bg-primary";
+                                            }
+                                            if (item.Percent >= 85 && item.Percent <= 100)
+                                            {
+                                                renk = "bg-success";
+                                            }
+                                            <tr>
+                                                <td>@item.ID</td>
+                                                <td>@item.Skill</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="progress-bar @renk" style="width: @item.Percent%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge @renk">@item.Percent%</span></td>
+                                                <td>
+                                                    <a href="/Skill/SEdit/@item.ID" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Düzenle</a>
+                                                </td>
+                                                <td><a href="/Skill/SDeleted/@item.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>Sil</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>
+
+
+

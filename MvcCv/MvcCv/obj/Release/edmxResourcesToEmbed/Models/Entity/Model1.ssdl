@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCvModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblAboutt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="Phone" Type="varchar" MaxLength="20" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Explanation" Type="varchar(max)" />
+    <Property Name="Addres" Type="nvarchar" MaxLength="200" />
+    <Property Name="Photog" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="20" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TblCertificates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Certificate" Type="varchar" MaxLength="250" />
+    <Property Name="Date" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="TblCommunication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Mail" Type="varchar" MaxLength="50" />
+    <Property Name="Heading" Type="varchar" MaxLength="100" />
+    <Property Name="Message" Type="varchar" MaxLength="1000" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="TblEducation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Subtitle1" Type="varchar" MaxLength="100" />
+    <Property Name="Subtitle2" Type="varchar" MaxLength="100" />
+    <Property Name="GradeAverage" Type="varchar" MaxLength="10" />
+    <Property Name="Date" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblExperience">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Subtitle" Type="varchar" MaxLength="100" />
+    <Property Name="Explanation" Type="varchar(max)" />
+    <Property Name="Date" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TblInterests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Interest1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Interest2" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TblSkills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Skill" Type="varchar" MaxLength="100" />
+    <Property Name="Percent" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="TblSocialMedia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="30" />
+    <Property Name="Link" Type="varchar" MaxLength="50" />
+    <Property Name="Icon" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="DbCvModelStoreContainer">
+    <EntitySet Name="TblAboutt" EntityType="Self.TblAboutt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCertificates" EntityType="Self.TblCertificates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblCommunication" EntityType="Self.TblCommunication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEducation" EntityType="Self.TblEducation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblExperience" EntityType="Self.TblExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblInterests" EntityType="Self.TblInterests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblSkills" EntityType="Self.TblSkills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

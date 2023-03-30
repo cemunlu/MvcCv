@@ -1,0 +1,30 @@
+﻿@model MvcCv.Models.Entity.TblEducation
+@{
+    ViewBag.Title = "EdAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Yeni Eğitim Ekleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Okul Adı")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Fakülte Adı")
+    @Html.TextBoxFor(x => x.Subtitle1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Bölüm Adı")
+    @Html.TextBoxFor(x => x.Subtitle2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("Genel Not Ortalaması")
+    @Html.TextBoxFor(x => x.GradeAverage, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessageFor(x => x.GradeAverage, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

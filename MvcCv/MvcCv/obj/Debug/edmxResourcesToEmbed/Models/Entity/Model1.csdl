@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCvModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblAboutt">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Addres" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Photog" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblCertificates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Certificate" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblCommunication">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Heading" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TblEducation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subtitle1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subtitle2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GradeAverage" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblExperience">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subtitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Explanation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TblInterests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Interest1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Interest2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblSkills">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Skill" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Percent" Type="Byte" />
+  </EntityType>
+  <EntityContainer Name="DbCvEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblAboutt" EntityType="Self.TblAboutt" />
+    <EntitySet Name="TblAdmin" EntityType="Self.TblAdmin" />
+    <EntitySet Name="TblCertificates" EntityType="Self.TblCertificates" />
+    <EntitySet Name="TblCommunication" EntityType="Self.TblCommunication" />
+    <EntitySet Name="TblEducation" EntityType="Self.TblEducation" />
+    <EntitySet Name="TblExperience" EntityType="Self.TblExperience" />
+    <EntitySet Name="TblInterests" EntityType="Self.TblInterests" />
+    <EntitySet Name="TblSkills" EntityType="Self.TblSkills" />
+    <EntitySet Name="TblSocialMedia" EntityType="DbCvModel.TblSocialMedia" />
+  </EntityContainer>
+  <EntityType Name="TblSocialMedia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+</Schema>
